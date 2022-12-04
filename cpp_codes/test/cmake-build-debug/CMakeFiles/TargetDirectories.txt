@@ -1,0 +1,3 @@
+/home/www/Codes/cpp_practise/cpp_codes/test/cmake-build-debug/CMakeFiles/test.dir
+/home/www/Codes/cpp_practise/cpp_codes/test/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/www/Codes/cpp_practise/cpp_codes/test/cmake-build-debug/CMakeFiles/rebuild_cache.dir
