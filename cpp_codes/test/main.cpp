@@ -1,24 +1,22 @@
 #include <iostream>
-template<typename type>
-type sum(type num_1,type num_2)
+#include <pthread.h>
+#include <unistd.h>
+template <typename type_1>
+void* print(void* print_text_p)
 {
-    return (num_1+num_2);
+    type_1 print_text;
+    print_text=*((type_1*)print_text_p);
+    while(1)
+    {
+        std::cout<<print_text<< std::endl;
+        sleep(1);
+    }
 }
-template<class Box_class>
-class Bigbox
-{
-private:
-    Box_class my_box;
 
-};
 int main() {
-    int a=1,b=2;
-    int result=sum<int>(a,b);
-    std::cout<<result<<std::endl;
-    float c=3.14,e=2.78;
-    float result_2=sum<float>(c,e);
-    std::cout<<result_2<<std::endl;
-    Bigbox<int> my_box;
-
+    pthread_t wish_1;
+    int text_1 = 3;
+    pthread_create(&wish_1, NULL, print<int>, (void *) &text_1);
+    pthread_exit(NULL);
 }
 
