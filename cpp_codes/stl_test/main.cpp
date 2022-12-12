@@ -1,16 +1,17 @@
 #include <iostream>
-#include <array>
+#include <vector>
 using namespace std;
 int main() {
-    array<double,10> test_array{};
-    for(int i=0;i<test_array.size();i++)
+    vector<int> v2(10,8);
+    vector<int> v1;
+    for(int i=0;i<10;i++)
     {
-        test_array.at(i)=i+1;
+        v1.push_back(i*i);
     }
-    array<double,10>::const_reverse_iterator cr_iter;
-    for(cr_iter=test_array.crbegin();cr_iter<test_array.crend();cr_iter++)
+    v1.swap(v2);
+    for(auto val=v1.cbegin();val<v1.cend();val++)
     {
-        cout<<*cr_iter<<" ";
+        cout<<*val<<" ";
     }
-
+    cout<<endl;
 }
