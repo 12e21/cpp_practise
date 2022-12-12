@@ -1,17 +1,10 @@
 #include <iostream>
-#include <vector>
+#include <utility>
 using namespace std;
 int main() {
-    vector<int> v2(10,8);
-    vector<int> v1;
-    for(int i=0;i<10;i++)
-    {
-        v1.push_back(i*i);
-    }
-    v1.swap(v2);
-    for(auto val=v1.cbegin();val<v1.cend();val++)
-    {
-        cout<<*val<<" ";
-    }
-    cout<<endl;
+    pair<string,string> pair1("google","www.google.com");
+    pair<string,string> pair2("baidu","www.baidu.com");
+    pair2.swap(pair1);
+    cout<<pair2.first<<":"<<pair2.second;
+
 }
