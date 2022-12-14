@@ -1,14 +1,12 @@
 #include <iostream>
-#include <map>
+#include <set>
 #include <utility>
 using namespace std;
 int main() {
-    map<string,string> map1{{"1","一"},{"2","二"}};
-    map1.insert(make_pair("3","三"));
-    map1.emplace(make_pair("4","四"));
-    map1.erase("2");
-    for(auto it=map1.cbegin();it!=map1.cend();it++)
+    multiset<string> multiset1={"book","book","apple","pencil","pen","gpt"};
+    multiset1.erase("book");
+    for(auto val=multiset1.cbegin();val!=multiset1.cend();val++)
     {
-        cout<<it->first<<":"<<it->second<<endl;
+        cout<<*val<<endl;
     }
 }
