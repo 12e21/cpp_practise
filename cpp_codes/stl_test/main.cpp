@@ -1,12 +1,12 @@
 #include <iostream>
-#include <set>
-#include <utility>
-using namespace std;
+#include "unordered_map"
 int main() {
-    multiset<string> multiset1={"book","book","apple","pencil","pen","gpt"};
-    multiset1.erase("book");
-    for(auto val=multiset1.cbegin();val!=multiset1.cend();val++)
+    std::unordered_map<std::string,std::string> translations{
+            {"apple","苹果"},{"banana","香蕉"},{"book","书"}
+    };
+    //std::cout<<"apple的中文是"<<translations.at("apple");
+    for(auto val=translations.cbegin();val!=translations.cend();val++)
     {
-        cout<<*val<<endl;
+        std::cout<<val->first<<"的中文是"<<val->second<<std::endl;
     }
 }
